@@ -1,0 +1,27 @@
+﻿ @model ContractMonthlyClaimsSystemWeb.Models.Claim
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Claim Result</title>
+</head>
+<body>
+    <h1>Claim Result</h1>
+
+    <p><strong>Hours Worked:</strong> @Model.HoursWorked</p>
+    <p><strong>Hourly Rate:</strong> @Model.HourlyRate</p>
+    <p><strong>Total Payment:</strong> @Model.TotalPayment</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+
+    @if (Model.Status == "Pending")
+    {
+        <form asp-action="Approve" asp-route-id="@Model.Id" method="get">
+            <button type="submit">Approve</button>
+        </form>
+
+        <form asp-action="Reject" asp-route-id="@Model.Id" method="get">
+            <button type="submit">Reject</button>
+        </form>
+    }
+</body>
+</html>

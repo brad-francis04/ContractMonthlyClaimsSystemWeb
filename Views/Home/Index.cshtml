@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap CSS for easy layout and responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .feature-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+
+        .feature-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+            .feature-box h3 {
+                color: #007bff;
+            }
+
+            .feature-box p {
+                font-size: 14px;
+            }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to the Contract Monthly Claim System (CMCS)</h1>
+        <p>Your go-to platform for submitting and managing your claims as an Independent Contractor.</p>
+        <a href="@Url.Action("Index", "Claim")" class="btn btn-light btn-lg">Start Claim Submission</a>
+    </div>
+
+    <!-- Feature Section -->
+    <div class="container feature-section">
+        <div class="feature-box">
+            <h3>Submit Claim</h3>
+            <p>Effortlessly submit your monthly claims with a few clicks.</p>
+            <a href="@Url.Action("Index", "Claim")" class="btn btn-outline-primary">Submit Now</a>
+        </div>
+        <div class="feature-box">
+            <h3>Track Claim Status</h3>
+            <p>Track the progress of your claims in real-time.</p>
+            <a href="@Url.Action("ClaimResult", "Claim")" class="btn btn-outline-primary">Track Status</a>
+        </div>
+        <div class="feature-box">
+            <h3>View Claims</h3>
+            <p>Review your submitted claims and their statuses.</p>
+            <a href="@Url.Action("Index", "Claim")" class="btn btn-outline-primary">View Claims</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="text-center">
+        <p>&copy; 2024 Contract Monthly Claim System</p>
+        <a href="@Url.Action("Privacy", "Home")">Privacy Policy</a>
+    </div>
+
+   
+</body>
+</html>
+Explanation of Index.cshtml:
+Hero Section: A large, welcoming section that includes a title, a short description, and a call-to-action (CTA) button that directs users to the claim submission page.
+Feature Section: A section with cards that showcase the main features of the website (submit claim, track claim status, view claims). These cards use Bootstrap's grid system for layout and responsiveness.
+Footer Section: A simple footer with the copyright notice and a link to the Privacy page.
+Step 3: Modify the Privacy.cshtml View
+We will also update the Privacy page to have a GUI-style layout, which might include a few interactive elements and sections explaining privacy policies or terms of use.
+
+Views/Home/Privacy.cshtml (Modified for GUI)
+html
+Copy code
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Bootstrap CSS for easy layout -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            padding: 50px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+            .content h2 {
+                color: #007bff;
+            }
+    </style>
+</head>
+<body>
+    <!-- Privacy Content Section -->
+    <div class="container content">
+        <h2>Privacy Policy</h2>
+        <p>We value your privacy and strive to protect your personal information. Below is our privacy policy explaining how we handle your data:</p>
+
+        <h5>Information We Collect</h5>
+        <p>We collect information such as your hours worked and hourly rate to process your claims.</p>
+
+        <h5>How We Use Your Information</h5>
+        <p>Your information is used solely for the purpose of claim processing and related administrative tasks.</p>
+
+        <h5>Security</h5>
+        <p>We ensure that your data is securely stored and only accessible by authorized personnel.</p>
+
+        <h5>Contact Us</h5>
+        <p>If you have any questions regarding our privacy policy, please feel free to contact us.</p>
+
+        <p>&copy; 2024 Contract Monthly Claim System</p>
+    </div>
+
+    
+</body>
+</html>
+
+
+
+

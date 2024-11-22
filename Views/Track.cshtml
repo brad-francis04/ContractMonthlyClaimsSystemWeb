@@ -1,0 +1,25 @@
+﻿@model ContractMonthlyClaimsSystemWeb.Models.Claim
+
+@{
+    ViewData["Title"] = "Track Claim Status";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <p><strong>Lecturer Name:</strong> @Model.LecturerName</p>
+    <p><strong>Hours Worked:</strong> @Model.HoursWorked</p>
+    <p><strong>Hourly Rate:</strong> @Model.HourlyRate</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+    <p><strong>Date Submitted:</strong> @Model.DateSubmitted</p>
+
+    <p><a href="@Model.DocumentFilePath" target="_blank">View Supporting Document</a></p>
+
+    <form method="post" action="@Url.Action("Approve", "Claim", new { id = Model.Id })">
+        <button type="submit" class="btn btn-success">Approve</button>
+    </form>
+
+    <form method="post" action="@Url.Action("Reject", "Claim", new { id = Model.Id })">
+        <button type="submit" class="btn btn-danger">Reject</button>
+    </form>
+</div>

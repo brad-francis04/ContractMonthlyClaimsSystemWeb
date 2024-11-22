@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ContractMonthlyClaimsSystemWeb.Models.Claim>
+
+@{
+    ViewData["Title"] = "Claim List";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Lecturer Name</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.LecturerName</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.HourlyRate</td>
+                <td>@claim.Status</td>
+                <td>
+                    <a href="@Url.Action("Track", "Claim", new { id = claim.Id })" class="btn btn-info">Track</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
