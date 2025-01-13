@@ -77,3 +77,6 @@ namespace ContractMonthlyClaimsSystemWeb.Controllers
         }
     }
 }
+
+it add .
+git commit -m "Set up Claims and Lecturers controllers with basic CRUD operations and automated verification process"
